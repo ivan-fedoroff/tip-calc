@@ -18,12 +18,14 @@ const calcClickHandler = () => {
   const percentOfTip = parseInt(serviceInput.value, 10) / 100;
   const guestNumber = parseInt(guestNumberInput.value, 10);
 
-  const billForPerson = personBill(bill, guestNumber);
-  const tipForPerson = calcTips(billForPerson, percentOfTip);
-  const sumForPerson = calcSum(billForPerson, tipForPerson);
+  if (bill && guestNumber) {
+    const billForPerson = personBill(bill, guestNumber);
+    const tipForPerson = calcTips(billForPerson, percentOfTip);
+    const sumForPerson = calcSum(billForPerson, tipForPerson);
 
-  tipP.innerText = `${tipForPerson} ₽`;
-  sumP.innerText = `${sumForPerson} ₽`;
+    tipP.innerText = `${tipForPerson} ₽`;
+    sumP.innerText = `${sumForPerson} ₽`;
+  }
 };
 
 actionButtonCalc.addEventListener('click', calcClickHandler);
