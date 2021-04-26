@@ -27,3 +27,13 @@ const calcClickHandler = () => {
 };
 
 actionButtonCalc.addEventListener('click', calcClickHandler);
+
+const actionButtonReset = document.querySelector('.action-reset');
+
+const resetClickHandler = () => {
+  billInput.value = '';
+  serviceInput.value = '0';
+  guestNumberInput.value = '';
+};
+
+actionButtonReset.addEventListener('click', resetClickHandler);
